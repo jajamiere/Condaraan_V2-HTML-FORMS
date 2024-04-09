@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAJAMEERE</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+
+    <div class="blurry-coffee-background">
+        <div class="form-container">
+
+            <img src="Assets/Jajameere Kapehan Logo.png" alt="Jajameere Logo">
+            <h1>JAJAMEERE</h1>
+            <h2>Coffee and Tea</h2>
+            <p>Satisfy your cravings, order now!</p>
+
+            <form>
+
+                <fieldset>
+                    <label for="name">Enter First Name: <input id="name" name="name" type="text" required /></label>
+                    <label for="email">Enter Your Email: <input id="email" name="email" type="email" required /></label>
+                    <label for="age">Input your age (years): <input id="age" type="number" name="age" min="17"
+                            max="99" /></label>
+                </fieldset>
+
+                <fieldset>
+                    <div id="dynamic-dropdown">
+                        <button class="dropdown-toggle">
+                            <span>Menu</span>
+                            <i class="fa-solid fa-caret-down"></i>
+                        </button>
+                        <ul class="dynamic-dropdown-menu">
+                            <li class="drop-menu-item"><a>Americano</a></li>
+                            <li class="drop-menu-item"><a>Mocha</a></li>
+                            <li class="drop-menu-item"><a>Salted Caramel</a></li>
+
+                            <li class="drop-menu-item dynamic-dropdown">
+                                <a class="submenu-toggle">
+                                    <span>Lattes</span>
+                                    <i class="fa-solid fa-caret-right"></i>
+                                </a>
+                                <ul class="submenu">
+                                    <li class="submenu-item"><a>Matcha Latte</a></li>
+                                    <li class="submenu-item"><a>Strawberry Latte</a></li>
+                                    <li class="submenu-item"><a>Caramel Latte</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="drop-menu-item dynamic-dropdown">
+                                <a class="submenu-toggle">
+                                    <span>Frappes</span>
+                                    <i class="fa-solid fa-caret-right"></i>
+                                </a>
+                                <ul class="submenu">
+                                    <li class="submenu-item"><a>Strawberry Delight</a></li>
+                                    <li class="submenu-item"><a>Chocolate Heaven</a></li>
+                                    <li class="submenu-item"><a>Cookies and Cream Dream</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                </fieldset>
+
+                <fieldset>
+                    <legend style="font-weight: bold;">Mode of Payment</legend>
+                    <label for="cash-payment"><input id="cash-payment" type="radio" name="payment-type"
+                            class="block" checked /> Cash</label>
+                    <label for="cashless-payment"><input id="cashless-payment" type="radio" name="payment-type"
+                            class="block" /> Cashless</label>
+                </fieldset>
+
+                <fieldset>
+                    <legend style="font-weight: bold;">Where to?</legend>
+                    <label for="dine-in"><input id="dine-in" type="radio" name="service-type" class="block"
+                            checked /> Dine-in</label>
+                    <label for="take-out"><input id="take-out" type="radio" name="service-type" class="block" />
+                        Takeout</label>
+                </fieldset>
+
+                <fieldset>
+
+                    <label for="Comments">Location
+                        <textarea id="comments" name="comments" rows="4" cols="30"></textarea>
+                    </label>
+
+                </fieldset>
+
+                <input type="reset" value="Cancel" />
+                <input type="submit" value="Place Order" />
+
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
