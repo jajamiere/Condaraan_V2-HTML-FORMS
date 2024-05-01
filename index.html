@@ -1,103 +1,480 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JAJAMEERE</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script src="script.js"></script>
+    <title>Jajameere</title>    
+    <link rel="icon" href="assets/jaja-kopi-shop-logo.png" type="image/png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
 </head>
+<body class="bg-stone-100" >
 
-<body>
+<!-- NavBar -->  
 
-    <div class="blurry-coffee-background">
-        <div class="form-container">
-
-            <img src="Assets/Jajameere Kapehan Logo.png" alt="Jajameere Logo">
-            <h1>JAJAMEERE</h1>
-            <h2>Coffee and Tea</h2>
-            <p>Satisfy your cravings, order now!</p>
-
-            <form>
-
-                <fieldset>
-                    <label for="name">Enter First Name: <input id="name" name="name" type="text" required /></label>
-                    <label for="email">Enter Your Email: <input id="email" name="email" type="email" required /></label>
-                    <label for="age">Input your age (years): <input id="age" type="number" name="age" min="17"
-                            max="99" /></label>
-                </fieldset>
-
-                <fieldset>
-                    <div id="dynamic-dropdown">
-                        <button class="dropdown-toggle">
-                            <span>Menu</span>
-                            <i class="fa-solid fa-caret-down"></i>
-                        </button>
-                        <ul class="dynamic-dropdown-menu">
-                            <li class="drop-menu-item"><a>Americano</a></li>
-                            <li class="drop-menu-item"><a>Mocha</a></li>
-                            <li class="drop-menu-item"><a>Salted Caramel</a></li>
-
-                            <li class="drop-menu-item dynamic-dropdown">
-                                <a class="submenu-toggle">
-                                    <span>Lattes</span>
-                                    <i class="fa-solid fa-caret-right"></i>
-                                </a>
-                                <ul class="submenu">
-                                    <li class="submenu-item"><a>Matcha Latte</a></li>
-                                    <li class="submenu-item"><a>Strawberry Latte</a></li>
-                                    <li class="submenu-item"><a>Caramel Latte</a></li>
-                                </ul>
-                            </li>
-
-                            <li class="drop-menu-item dynamic-dropdown">
-                                <a class="submenu-toggle">
-                                    <span>Frappes</span>
-                                    <i class="fa-solid fa-caret-right"></i>
-                                </a>
-                                <ul class="submenu">
-                                    <li class="submenu-item"><a>Strawberry Delight</a></li>
-                                    <li class="submenu-item"><a>Chocolate Heaven</a></li>
-                                    <li class="submenu-item"><a>Cookies and Cream Dream</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-
-                </fieldset>
-
-                <fieldset>
-                    <legend style="font-weight: bold;">Mode of Payment</legend>
-                    <label for="cash-payment"><input id="cash-payment" type="radio" name="payment-type"
-                            class="block" checked /> Cash</label>
-                    <label for="cashless-payment"><input id="cashless-payment" type="radio" name="payment-type"
-                            class="block" /> Cashless</label>
-                </fieldset>
-
-                <fieldset>
-                    <legend style="font-weight: bold;">Where to?</legend>
-                    <label for="dine-in"><input id="dine-in" type="radio" name="service-type" class="block"
-                            checked /> Dine-in</label>
-                    <label for="take-out"><input id="take-out" type="radio" name="service-type" class="block" />
-                        Takeout</label>
-                </fieldset>
-
-                <fieldset>
-
-                    <label for="Comments">Location
-                        <textarea id="comments" name="comments" rows="4" cols="30"></textarea>
-                    </label>
-
-                </fieldset>
-
-                <input type="reset" value="Cancel" />
-                <input type="submit" value="Place Order" />
-
-            </form>
+<nav class="bg-stone-100">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+    <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse mr-auto">
+        <img src="assets/jaja-kopi-emblem-nobg.png" class="h-28" alt="Flowbite Logo" />
+        <!-- <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span> -->
+    </a>
+    <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+        
+        <button data-collapse-toggle="navbar-cta" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-orange-950 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-orange-950 mr-5" aria-controls="navbar-cta" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+          </svg>
+      </button>
+    </div>
+    <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-cta">
+      <ul class="flex flex-col font-medium sm:rounded-full p-5 mt-4 border border-gray-100 rounded-lg bg-orange-950 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-orange-950">
+        <li>
+          <a href="#home" class="block py-2 px-3 md:p-0 text-white rounded hover:bg-stone-800 md:hover:bg-transparent md:hover:text-stone-300" aria-current="page">Home</a>
+        </li>
+        <li>
+          <a href="#best-sellers" class="block py-2 px-3 md:p-0 text-white rounded hover:bg-stone-800 md:hover:bg-transparent md:hover:text-stone-300">Best Sellers</a>
+        </li>
+        <li>
+          <a href="#menu" class="block py-2 px-3 md:p-0 text-white rounded hover:bg-stone-800 md:hover:bg-transparent md:hover:text-stone-300">Menu</a>
+        </li>
+        <li>
+          <a href="#order" class="block py-2 px-3 md:p-0 text-white rounded hover:bg-stone-800 md:hover:bg-transparent md:hover:text-stone-300">Order</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+  </nav>
+  
+  <!-- Carousel -->
+  <div id="custom-controls-gallery" class="relative w-full py-26 my-10" data-carousel="slide" id="home">
+    <!-- Carousel wrapper -->
+    <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+         <!-- Item 1 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
+            <img src="assets/carousel-1.png" class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+        </div>
+        <!-- Item 2 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="assets/carousel-2.png" class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+        </div>
+        <!-- Item 3 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="assets/carousel-3.png" class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+        </div>
+        <!-- Item 4 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="assets/carousel-4.png" class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+        </div>
+        <!-- Item 5 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="assets/carousel-5.png" class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
         </div>
     </div>
-</body>
+    <div class="flex justify-center items-center pt-4">
+        <button type="button" class="flex justify-center items-center me-4 h-full cursor-pointer group focus:outline-none" data-carousel-prev>
+            <span class="text-gray-400 hover:text-gray-900 dark:hover:text-white group-focus:text-gray-900">
+                <svg class="rtl:rotate-180 w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5H1m0 0 4 4M1 5l4-4"/>
+                </svg>
+                <span class="sr-only">Previous</span>
+            </span>
+        </button>
+        <button type="button" class="flex justify-center items-center h-full cursor-pointer group focus:outline-none" data-carousel-next>
+            <span class="text-gray-400 hover:text-gray-900 dark:hover:text-white group-focus:text-gray-900 ">
+                <svg class="rtl:rotate-180 w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                </svg>
+                <span class="sr-only">Next</span>
+            </span>
+        </button>
+    </div>
+</div>  
 
+<!-- Best-Sellers -->
+<section class="bg-white" id="best-sellers">
+  <div class="container px-6 py-20  mx-auto">
+      <div class="text-center">        
+        <h1 class="mb-4 text-6xl font-extrabold leading-none tracking-tight text-gray-900" >These are our <span class="text-orange-700">Best Sellers</span></h1>
+        <p class="text-lg font-normal text-gray-500 lg:text-xl ">Take a look at what most people crave, order them to quench your thrist for coffee</p>
+      </div>
+
+      <div class="grid grid-cols-1 gap-8 mt-8 lg:grid-cols-2">
+          <div>
+              <img class="relative z-10 object-cover w-full rounded-md h-96" src="assets/best-seller-left.jpg" alt="">
+
+              <div class="relative z-20 max-w-lg p-6 mx-auto -mt-5 bg-orange-950 rounded-md shadow">
+                <h1 class="mb-2 text-6xl font-extrabold leading-none text-stone-50">Americano</h1>
+
+                  <p class="mt-2 text-sm text-stone-400 pr-5">
+                    Expertly crafted with rich espresso and hot water, it offers a bold yet smooth flavor profile that's sure to awaken your senses and kickstart your day
+                  </p>
+
+                  <a href="#" class="inline-flex items-center mt-4 justify-center px-5 py-3 text-2xl font-bold text-center text-white bg-orange-600 rounded-lg hover:bg-orange-800 ">
+                    $5.00
+                    <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                  </svg>
+                </a>
+              </div>
+          </div>
+
+          <div>
+              <img class="relative z-10 object-cover w-full rounded-md h-96" src="assets/best-seller-right.jpg" alt="">
+              <div class="relative z-20 max-w-lg p-6 mx-auto -mt-5 bg-orange-950 rounded-md shadow">
+                <h1 class="mb-2 text-6xl font-extrabold leading-none text-stone-50">Latte</h1>
+
+                  <p class="mt-2 text-sm text-stone-400 pr-5">
+                    Savor every sip of this comforting classic, offering a harmonious balance of bold coffee flavor and smooth, frothy goodness. Elevate your coffee experience with our irresistible Latte today.
+                  </p>
+
+                  <a href="#" class="inline-flex items-center mt-4 justify-center px-5 py-3 text-2xl font-bold text-center text-white bg-orange-600 rounded-lg hover:bg-orange-800 ">
+                    $6.50
+                    <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                  </svg>
+                </a>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+</div>
+  
+
+
+<!-- Menu -->
+<section class="bg-orange-900 mb-0">
+  <div class=" px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-16" id="menu">
+    <div class="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
+      <h2 class="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-stone-50 sm:text-4xl md:mx-auto">
+        Browse our <mark class="px-2 text-orange-800 bg-stone-100 rounded">Menu</mark>
+      </h2>
+      <p class="text-base text-stone-300 md:text-lg">
+        Indulge in our vast selection of beverages and desserts.
+      </p>
+    </div>
+    <div class="grid gap-5 row-gap-5 mb-8 lg:grid-cols-4 sm:grid-cols-2">
+
+      <a href="#" aria-label="View Item" class="inline-block overflow-hidden duration-300 transform bg-white rounded shadow-sm hover:-translate-y-2">
+        <div class="flex flex-col h-full">
+          <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=1937&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="object-cover w-full h-60" alt="" />
+          <div class="flex-grow border border-t-0 rounded-b">
+            <div class="p-5">
+              <h6 class="mb-2 font-semibold leading-5">Latte</h6>
+              <p class="text-sm text-gray-900 mb-5">
+                A smooth espresso topped with velvety steamed milk, a comforting indulgence in a cup.
+              </p>
+              <button type="button" class="text-white bg-orange-900 hover:bg-orange-700 focus:ring-4 focus:outline-none focus:ring-stone-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center ">
+                <svg class="w-3.5 h-3.5 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 21">
+                <path d="M15 12a1 1 0 0 0 .962-.726l2-7A1 1 0 0 0 17 3H3.77L3.175.745A1 1 0 0 0 2.208 0H1a1 1 0 0 0 0 2h.438l.6 2.255v.019l2 7 .746 2.986A3 3 0 1 0 9 17a2.966 2.966 0 0 0-.184-1h2.368c-.118.32-.18.659-.184 1a3 3 0 1 0 3-3H6.78l-.5-2H15Z"/>
+                </svg>
+                Buy now
+                </button>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" aria-label="View Item" class="inline-block overflow-hidden duration-300 transform bg-white rounded shadow-sm hover:-translate-y-2">
+        <div class="flex flex-col h-full">
+          <img src="https://images.unsplash.com/photo-1595434091143-b375ced5fe5c?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="object-cover w-full h-60" alt="" />
+          <div class="flex-grow border border-t-0 rounded-b">
+            <div class="p-5">
+              <h6 class="mb-2 font-semibold leading-5">Esperesso</h6>
+              <p class="text-sm text-gray-900 mb-10">
+                Intense, concentrated shot of coffee; bold, rich flavor in a tiny cup.
+              </p>
+              <button type="button" class="text-white bg-orange-900 hover:bg-orange-700 focus:ring-4 focus:outline-none focus:ring-stone-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center ">
+                <svg class="w-3.5 h-3.5 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 21">
+                <path d="M15 12a1 1 0 0 0 .962-.726l2-7A1 1 0 0 0 17 3H3.77L3.175.745A1 1 0 0 0 2.208 0H1a1 1 0 0 0 0 2h.438l.6 2.255v.019l2 7 .746 2.986A3 3 0 1 0 9 17a2.966 2.966 0 0 0-.184-1h2.368c-.118.32-.18.659-.184 1a3 3 0 1 0 3-3H6.78l-.5-2H15Z"/>
+                </svg>
+                Buy now
+                </button>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" aria-label="View Item" class="inline-block overflow-hidden duration-300 transform bg-white rounded shadow-sm hover:-translate-y-2">
+        <div class="flex flex-col h-full">
+          <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aWNlZCUyMGNvZmZlZXxlbnwwfHwwfHx8MA%3D%3D" class="object-cover w-full h-60" alt="" />
+          <div class="flex-grow border border-t-0 rounded-b">
+            <div class="p-5">
+              <h6 class="mb-2 font-semibold leading-5">Iced Coffee</h6>
+              <p class="text-sm text-gray-900 mb-5">
+                Get a refreshing blend of chilled coffee, poured over ice, perfect for a pick-me-up on hot days.
+              </p>
+              <button type="button" class="text-white bg-orange-900 hover:bg-orange-700 focus:ring-4 focus:outline-none focus:ring-stone-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center ">
+                <svg class="w-3.5 h-3.5 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 21">
+                <path d="M15 12a1 1 0 0 0 .962-.726l2-7A1 1 0 0 0 17 3H3.77L3.175.745A1 1 0 0 0 2.208 0H1a1 1 0 0 0 0 2h.438l.6 2.255v.019l2 7 .746 2.986A3 3 0 1 0 9 17a2.966 2.966 0 0 0-.184-1h2.368c-.118.32-.18.659-.184 1a3 3 0 1 0 3-3H6.78l-.5-2H15Z"/>
+                </svg>
+                Buy now
+                </button>      
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" aria-label="View Item" class="inline-block overflow-hidden duration-300 transform bg-white rounded shadow-sm hover:-translate-y-2">
+        <div class="flex flex-col h-full">
+          <img src="https://images.unsplash.com/photo-1498709112912-9be3173d30be?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjR8fGNvZmZlZXxlbnwwfHwwfHx8MA%3D%3D" class="object-cover w-full h-60" alt="" />
+          <div class="flex-grow border border-t-0 rounded-b">
+            <div class="p-5">
+              <h6 class="mb-2 font-semibold leading-5">Americano</h6>
+              <p class="text-sm text-gray-900 mb-5">
+                An espresso shot diluted with hot water, creating a rich yet milder coffee experience
+              </p>
+              <button type="button" class="text-white bg-orange-900 hover:bg-orange-700 focus:ring-4 focus:outline-none focus:ring-stone-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center ">
+                <svg class="w-3.5 h-3.5 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 21">
+                <path d="M15 12a1 1 0 0 0 .962-.726l2-7A1 1 0 0 0 17 3H3.77L3.175.745A1 1 0 0 0 2.208 0H1a1 1 0 0 0 0 2h.438l.6 2.255v.019l2 7 .746 2.986A3 3 0 1 0 9 17a2.966 2.966 0 0 0-.184-1h2.368c-.118.32-.18.659-.184 1a3 3 0 1 0 3-3H6.78l-.5-2H15Z"/>
+                </svg>
+                Buy now
+                </button>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" aria-label="View Item" class="inline-block overflow-hidden duration-300 transform bg-white rounded shadow-sm hover:-translate-y-2">
+        <div class="flex flex-col h-full">
+          <img src="https://images.unsplash.com/photo-1610851467358-e2a4a5804335?q=80&w=1999&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="object-cover w-full h-48" alt="" />
+          <div class="flex-grow border border-t-0 rounded-b">
+            <div class="p-5">
+              <h6 class="mb-2 font-semibold leading-5">Red Velvet Cupcake</h6>
+              <p class="text-sm text-gray-900 mb-11">
+                Moist, velvety cocoa cakes with a hint of tanginess, topped with creamy, luscious cream cheese frosting.
+              </p>
+
+              <button type="button" class="text-white bg-orange-900 hover:bg-orange-700 focus:ring-4 focus:outline-none focus:ring-stone-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center ">
+                <svg class="w-3.5 h-3.5 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 21">
+                <path d="M15 12a1 1 0 0 0 .962-.726l2-7A1 1 0 0 0 17 3H3.77L3.175.745A1 1 0 0 0 2.208 0H1a1 1 0 0 0 0 2h.438l.6 2.255v.019l2 7 .746 2.986A3 3 0 1 0 9 17a2.966 2.966 0 0 0-.184-1h2.368c-.118.32-.18.659-.184 1a3 3 0 1 0 3-3H6.78l-.5-2H15Z"/>
+                </svg>
+                Buy now
+                </button>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" aria-label="View Item" class="inline-block overflow-hidden duration-300 transform bg-white rounded shadow-sm hover:-translate-y-2">
+        <div class="flex flex-col h-full">
+          <img src="https://images.unsplash.com/photo-1603532648955-039310d9ed75?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fHw%3D" class="object-cover w-full h-48" alt="" />
+          <div class="flex-grow border border-t-0 rounded-b">
+            <div class="p-5">
+              <h6 class="mb-2 font-semibold leading-5">Ferrero Rocher Cupcake</h6>
+              <p class="text-sm text-gray-900 mb-11">
+                A rich chocolate cupcake topped with hazelnut frosting, crowned with a Ferrero Rocher chocolate. Bliss!
+              </p>
+
+              <button type="button" class="text-white bg-orange-900 hover:bg-orange-700 focus:ring-4 focus:outline-none focus:ring-stone-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center ">
+                <svg class="w-3.5 h-3.5 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 21">
+                <path d="M15 12a1 1 0 0 0 .962-.726l2-7A1 1 0 0 0 17 3H3.77L3.175.745A1 1 0 0 0 2.208 0H1a1 1 0 0 0 0 2h.438l.6 2.255v.019l2 7 .746 2.986A3 3 0 1 0 9 17a2.966 2.966 0 0 0-.184-1h2.368c-.118.32-.18.659-.184 1a3 3 0 1 0 3-3H6.78l-.5-2H15Z"/>
+                </svg>
+                Buy now
+                </button>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" aria-label="View Item" class="inline-block overflow-hidden duration-300 transform bg-white rounded shadow-sm hover:-translate-y-2">
+        <div class="flex flex-col h-full">
+          <img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="object-cover w-full h-48" alt="" />
+          <div class="flex-grow border border-t-0 rounded-b">
+            <div class="p-5">
+              <h6 class="mb-2 font-semibold leading-5">Chocolate Chip Cookie</h6>
+              <p class="text-sm text-gray-900 mb-16">
+                Buttery, chewy, with melty chocolate chips. A timeless treat loved by all ages.
+              </p>
+
+              <button type="button" class="text-white bg-orange-900 hover:bg-orange-700 focus:ring-4 focus:outline-none focus:ring-stone-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center mr-au">
+                <svg class="w-3.5 h-3.5 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 21">
+                <path d="M15 12a1 1 0 0 0 .962-.726l2-7A1 1 0 0 0 17 3H3.77L3.175.745A1 1 0 0 0 2.208 0H1a1 1 0 0 0 0 2h.438l.6 2.255v.019l2 7 .746 2.986A3 3 0 1 0 9 17a2.966 2.966 0 0 0-.184-1h2.368c-.118.32-.18.659-.184 1a3 3 0 1 0 3-3H6.78l-.5-2H15Z"/>
+                </svg>
+                Buy now
+                </button>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" aria-label="View Item" class="inline-block overflow-hidden duration-300 transform bg-white rounded shadow-sm hover:-translate-y-2">
+        <div class="flex flex-col h-full">
+          <img src="https://images.unsplash.com/photo-1621955511667-e2c316e4575d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="object-cover w-full h-48" alt="" />
+          <div class="flex-grow border border-t-0 rounded-b">
+            <div class="p-5">
+              <h6 class="mb-2 font-semibold leading-5">Strawberry Cheesecake</h6>
+              <p class="text-sm text-gray-900 mb-6">
+                Creamy cheesecake nestled in a buttery graham cracker crust, crowned with fresh strawberries. A decadent delight in every bite!
+              </p>
+
+              <button type="button" class="text-white bg-orange-900 hover:bg-orange-700 focus:ring-4 focus:outline-none focus:ring-stone-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center mr-au">
+                <svg class="w-3.5 h-3.5 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 21">
+                <path d="M15 12a1 1 0 0 0 .962-.726l2-7A1 1 0 0 0 17 3H3.77L3.175.745A1 1 0 0 0 2.208 0H1a1 1 0 0 0 0 2h.438l.6 2.255v.019l2 7 .746 2.986A3 3 0 1 0 9 17a2.966 2.966 0 0 0-.184-1h2.368c-.118.32-.18.659-.184 1a3 3 0 1 0 3-3H6.78l-.5-2H15Z"/>
+                </svg>
+                Buy now
+                </button>
+
+            </div>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- Ordering Form -->
+<section class="relative flex flex-wrap lg:h-screen lg:items-center" id="order">
+    <div class="w-full px-4 py-12 sm:px-6 sm:py-16 lg:w-1/2 lg:px-8 lg:py-24">
+      <div class="mx-auto max-w-lg text-center">
+        <h1 class="text-2xl font-bold sm:text-3xl">Sip. Savor. Enjoy</h1>
+  
+        <p class="mt-4 text-gray-500 mb-5">
+          Fuel your day with our handcrafted coffee blends. Order now for a boost of flavor and energy
+        </p>
+      </div>
+  
+      <form class="w-full max-w-lg mx-auto" >
+        <div class="flex flex-wrap -mx-3 mb-6">
+          <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
+              First Name
+            </label>
+            <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="Jane">
+            <p class="text-red-500 text-xs italic">Please fill out this field.</p>
+          </div>
+          <div class="w-full md:w-1/2 px-3">
+            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
+              Last Name
+            </label>
+            <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Doe">
+          </div>
+        </div>
+        <div class="flex flex-wrap -mx-3 mb-6">
+          <div class="w-full px-3">
+            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
+              Order
+            </label>
+            <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-password" type="password" placeholder="Separated by commas">
+            <p class="text-gray-600 text-xs italic"></p>
+          </div>
+        </div>
+        <div class="flex flex-wrap -mx-3 mb-2">
+          <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-city">
+              Municipality
+            </label>
+            <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city" type="text" placeholder="Bulacan">
+          </div>
+          <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
+              State
+            </label>
+            <div class="relative">
+              <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
+                <option>Malolos</option>
+                <option>Sta. Maria</option>
+                <option>Bocaue</option>
+              </select>
+              <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">                
+              </div>
+            </div>
+          </div>
+          <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
+              Zip
+            </label>
+            <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-zip" type="text" placeholder="90210">
+          </div>          
+        </div>
+        <button type="button" class="text-white bg-orange-900 hover:bg-orange-700 focus:ring-4 focus:outline-none focus:ring-stone-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center mt-5">
+          <svg class="w-3.5 h-3.5 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 21">
+          <path d="M15 12a1 1 0 0 0 .962-.726l2-7A1 1 0 0 0 17 3H3.77L3.175.745A1 1 0 0 0 2.208 0H1a1 1 0 0 0 0 2h.438l.6 2.255v.019l2 7 .746 2.986A3 3 0 1 0 9 17a2.966 2.966 0 0 0-.184-1h2.368c-.118.32-.18.659-.184 1a3 3 0 1 0 3-3H6.78l-.5-2H15Z"/>
+          </svg>
+          Place Order
+          </button>
+      </form>
+    </div>
+  
+    <div class="relative h-64 w-full sm:h-96 lg:h-full lg:w-1/2">
+      <img
+        alt=""
+        src="https://images.unsplash.com/photo-1507133750040-4a8f57021571?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        class="absolute inset-0 h-full w-full object-cover"
+      />
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-orange-950 py-5">
+    <div class="mx-auto w-full max-w-screen-xl p-4 py-12 lg:py-8">
+        <div class="md:flex md:justify-between">
+          <div class="mb-6 md:mb-0">
+              <a href="https://www.facebook.com/jhamima.condaraan" class="flex items-center">
+                  <img src="assets/jaja-kopi-shop-logo.png" class="h-44" alt="FlowBite Logo" />                
+              </a>
+          </div>
+          <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+              <div>
+                  <h2 class="mb-6 text-sm font-semibold text-stone-200 uppercase">Resources</h2>
+                  <ul class="text-gray-500 font-medium">
+                      <li class="mb-4">
+                          <a href="https://flowbite.com/" class="hover:underline">Flowbite</a>
+                      </li>
+                      <li>
+                          <a href="https://tailwindcss.com/" class="hover:underline">Tailwind CSS</a>
+                      </li>
+                  </ul>
+              </div>
+              <div>
+                  <h2 class="mb-6 text-sm font-semibold text-stone-200 uppercase">About us</h2>
+                  <ul class="text-gray-500 font-medium">
+                      <li class="mb-4">
+                          <a href="https://github.com/jajamiere" class="hover:underline ">Github</a>
+                      </li>
+                      <li>
+                          <a href="https://www.instagram.com/_jajamierey" class="hover:underline">Instagram</a>
+                      </li>
+                  </ul>
+              </div>
+              <div>
+                  <h2 class="mb-6 text-sm font-semibold text-stone-200 uppercase">Legal</h2>
+                  <ul class="text-gray-500 font-medium">
+                      <li class="mb-4">
+                          <a href="#" class="hover:underline">Privacy Policy</a>
+                      </li>
+                      <li>
+                          <a href="#" class="hover:underline">Terms &amp; Conditions</a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+      <hr class="my-6 border-stone-200 sm:mx-auto lg:my-8" />
+      <div class="sm:flex sm:items-center sm:justify-between">
+          <span class="text-sm text-gray-500 sm:text-center">© 2023 <a href="https://flowbite.com/" class="hover:underline">JAJAMEERE™</a>. All Rights Reserved.
+          </span>
+          <div class="flex mt-4 sm:justify-center sm:mt-0">
+              <a href="https://www.facebook.com/jhamima.condaraan" class="text-gray-500 hover:text-gray-900">
+                  <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 8 19">
+                        <path fill-rule="evenodd" d="M6.135 3H8V0H6.135a4.147 4.147 0 0 0-4.142 4.142V6H0v3h2v9.938h3V9h2.021l.592-3H5V3.591A.6.6 0 0 1 5.592 3h.543Z" clip-rule="evenodd"/>
+                    </svg>
+                  <span class="sr-only">Facebook page</span>
+              </a>
+              <a href="https://github.com/jajamiere" class="text-gray-500 hover:text-gray-900 ms-5">
+                  <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 .333A9.911 9.911 0 0 0 6.866 19.65c.5.092.678-.215.678-.477 0-.237-.01-1.017-.014-1.845-2.757.6-3.338-1.169-3.338-1.169a2.627 2.627 0 0 0-1.1-1.451c-.9-.615.07-.6.07-.6a2.084 2.084 0 0 1 1.518 1.021 2.11 2.11 0 0 0 2.884.823c.044-.503.268-.973.63-1.325-2.2-.25-4.516-1.1-4.516-4.9A3.832 3.832 0 0 1 4.7 7.068a3.56 3.56 0 0 1 .095-2.623s.832-.266 2.726 1.016a9.409 9.409 0 0 1 4.962 0c1.89-1.282 2.717-1.016 2.717-1.016.366.83.402 1.768.1 2.623a3.827 3.827 0 0 1 1.02 2.659c0 3.807-2.319 4.644-4.525 4.889a2.366 2.366 0 0 1 .673 1.834c0 1.326-.012 2.394-.012 2.72 0 .263.18.572.681.475A9.911 9.911 0 0 0 10 .333Z" clip-rule="evenodd"/>
+                  </svg>
+                  <span class="sr-only">GitHub account</span>
+              </a>
+          </div>
+      </div>
+    </div>
+</footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+</body>
 </html>
